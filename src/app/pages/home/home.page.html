@@ -1,0 +1,101 @@
+<app-header [bkButton]="false"></app-header>
+
+<ion-content fullscreen="true">
+
+  <!--<div class="text_end">
+    <div class="row">
+      <div class="col-6 social-media">
+        <img src="../../../assets/img/facebook.png" (click)="openFB()"/>
+      </div>
+      <br />
+      <a (click)="openAdd()" class="title-color">WISP.MX</a>
+      <br><br>
+    </div>
+    <p (click)="openAdd()">Powered by Addinteli 2024</p>
+  </div>-->
+
+  <div style="margin: 10px 0px; text-align: center">
+    <br>
+    <img src="../../../assets/img/logo.png" height="180px" alt="">
+    <app-page-title [title]="title" style="color:#95c12d;"></app-page-title>
+  </div>
+  
+
+  <!--<ion-list>
+
+    <ion-item (click)="openRecarga()" detail>
+      <ion-icon slot="start" name="reload-circle" style="color:#95c12d;"></ion-icon>
+      Recargar Plan
+    </ion-item>
+
+    <ion-item *ngFor="let page of pages" [routerLink]="page.redirectTo" detail>
+      <ion-icon slot="start" [name]="page.icon" style="color:#95c12d;"></ion-icon>
+      {{page.name | titlecase}}
+    </ion-item>
+  </ion-list>-->
+
+  <ion-button (click)="openRecarga()" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" name="reload-circle" style="color:#95c12d;"></ion-icon>
+      Recargar plan
+    </div>
+  </ion-button>
+
+  <ion-button *ngFor="let page of pages" [routerLink]="page.redirectTo" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" [name]="page.icon" style="color:#95c12d;"></ion-icon>
+      {{page.name | titlecase}}
+    </div>
+  </ion-button>
+
+</ion-content>
+
+<app-footer></app-footer>
+
+<style>
+
+ion-button {
+    margin: 0;
+    padding: 8px 0;
+    height: auto;
+    font-size: 17px;
+  }
+
+  .text_left {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+  }
+
+  .text_left ion-icon {
+    margin-right: 8px;
+    font-size: small;
+  }
+
+  .text_end {
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 300;
+    font-size: small;
+  }
+
+  .row a {
+    color: rgba(255, 255, 255, 0.603);
+    text-decoration: none;
+    font-size: small;
+    margin-right: 10px;
+  }
+
+  .row img {
+    margin-right: 10px;
+  }
+</style>
